@@ -9,6 +9,7 @@ import (
 	"log/slog"
 	"math/rand"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/lib/pq"
@@ -38,8 +39,13 @@ func InitServer(db *sql.DB) (*http.Server, error) {
 	// Placar
 	mux.HandleFunc("GET /score", env.Scoreboard)
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	s := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":" + port, // ← AGORA USA A PORTA DO RENDER
 		Handler: cors.Default().Handler(mux),
 	}
 	return s, nil
