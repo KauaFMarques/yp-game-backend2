@@ -1,4 +1,4 @@
-module github.com/sidereusnuntius/yp
+module github.com/KauaFMarques/yp-game-backend2
 
 go 1.24.5
 
