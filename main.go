@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
+	"github.com/KauaFMarques/yp-game-backend2/app"
 	_ "github.com/lib/pq"
-	"github.com/sidereusnuntius/yp/app"
 )
 
 //go:embed schema.sql
